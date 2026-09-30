@@ -4,12 +4,13 @@ fn main() {
     let mut highs: Vec<i32> = vec![72, 68, 75, 81, 79];
 }
 
-
+use rand::Rng;
+let mut rng = rand::rng();
+highs.push(rng.random_range(60..=100))
+println!(
 
 fn average_temp(log: &Vec<i32>) -> f64
 
 fn hottest_day(log: &Vec<i32>) -> usize
 
 fn count_above(log: &Vec<i32>, threshold: i32) -> usize
-
-
