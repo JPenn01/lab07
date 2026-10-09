@@ -13,21 +13,21 @@ struct Summary {
 	days_above: usize,
 }
 
-fn average_temp(log: &Vec<i32>) -> f64 {
+fn average_temp(log: &Vec<Reading>) -> f64 {
 	if log.is_empty() {
 	return 0.0;
 }
-	let mut sum = 0
+	let mut sum = 0;
 	for r in log.iter() {
 	sum += r.high;
 }
 	sum as f64 / log.len() as f64
 }
 
-fn hottest_day(log: &Vec<i32>) -> usize {
+fn hottest_day(log: &Vec<Reading>) -> usize {
 	let mut best = 0;
 	for i in 1..log.len() {
-	if log[i] > log[best].high {
+	if log[i].high > log[best].high {
 	best = i;
 	}
 }
@@ -59,7 +59,7 @@ Summary {
 
 fn print_log(log: &Vec<Reading>) {
 	for r in log.iter() {
-	println!("{}: {}", r.day, r.high;
+	println!("{}: {}", r.day, r.high);
 	}
 }
 
@@ -68,7 +68,7 @@ fn main() {
 	let mut log: Vec<Reading> = Vec::new();
 	for i in 0..starting.len() {
 	  log.push(Reading {
-	    day: Days[i].to_string(),
+	    day: DAYS[i].to_string(),
 	    high: starting[i],
 	});
 }
@@ -85,12 +85,11 @@ for _ in 0..2 {
 	});
 }
 
-}
 println!("\n--- After adding two days ---");
 print_log(&log);
 
 	let summary = summarize(&log, 75);
 	println!("\nAverage: {:.1}", summary.average);
-	println!("Hottest day: {}", summary.hottest.day);
+	println!("Hottest day: {}", summary.hottest_day);
 	println!("Days above 75: {}", summary.days_above);
 }
