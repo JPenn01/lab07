@@ -1,0 +1,19 @@
+1. DAYS
+   Leave as is.
+   Fixed labels that never change, so a const array is enough.
+
+2. highs
+   Convert to a struct or collection.
+   A bare Vec<i32> has no day attached, so it should hold structs.
+
+3. DAYS[i] paired with highs[i]
+   Convert to a struct or collection.
+   One day's reading is split across two arrays linked only by index.
+
+4. The value returned by hottest_day
+   Convert to a struct or collection.
+   A bare index makes the caller look up the label separately.
+
+5. The threshold 75
+   Leave as is.
+   A single standalone value with nothing to group it with.

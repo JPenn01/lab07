@@ -1,0 +1,18 @@
+Item
+1.Days
+2.highs
+3.DAYS[i] paired with highs[i]
+4.value returned by hottest_day
+5.Threshold 75
+Decision
+1.Leave as is
+2.Convert to a collection
+3.Convert to a struct
+4.Convert to struct
+5.Leave as is
+Why
+1.Already fixed collection of labels
+2.No day attached so it would become a struct
+3.Shows a reading but are connected by matching index
+4.Returning a bare index forces you to lookup label seperatly
+5.Single lone value with nothing to group with

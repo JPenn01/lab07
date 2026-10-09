@@ -1,0 +1,8 @@
+Reading
+day: &'static str
+high: i32
+
+Summary
+average: f64
+hottest_day: &'static str
+days_above: usize
