@@ -1,3 +1,5 @@
+use rand::Rng;
+
 const DAYS: [&str; 7] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 fn main() {
@@ -32,7 +34,12 @@ fn count_above(log: &Vec<i32>, threshold: i32) -> usize {
 count
 }
 
-use rand::Rng;
+fn print_log(log: $Vec<i32>) {
+	for 1 in 0..log.len() {
+	println!("{}: {}", DAYS[i], log[i]);
+	}
+}
+
 let mut rng = rand::rng();
 for _ in 0..2 {
 highs.push(rng.random_range(60..=100))
@@ -40,4 +47,10 @@ highs.push(rng.random_range(60..=100))
 println!("\n--- After adding two days ---");
 print_log(&highs);
 
+	println!("\nAverage: {:.1}", average_temp(&highs));
+	println!("Hottest day: {}", DAYS[hottest_day(&highs)]);
+	println!("Days above 75: {}", count_above(&highs, 75));
 
+	let empty: Vec<i32> = Vec::new();
+	println!("Empty average: {}", average_temp(&empty));
+}
